@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -16,10 +17,16 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('role')->default('learner');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
+        DB::statement(
+            "ALTER TABLE users
+            ADD CONSTRAINT check_role
+            CHECK (role IN ('learner', 'system', 'course'));"
+        );
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
