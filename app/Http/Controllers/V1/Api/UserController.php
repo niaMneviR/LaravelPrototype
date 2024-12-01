@@ -8,6 +8,7 @@ use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Resources\V1\Api\UserResource;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {
@@ -63,9 +64,14 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        $temp = $user->toArray();
-        $temp['status'] = "archive";
-        $user->update($temp);
-        return response("",204);
+        if(Gate::authorize('delete', $user)){
+            $temp = $user->toArray();
+            $temp['status'] = "archive";
+            $user->update($temp);
+            return response("",204);
+        }
+        return response()->json([
+            "message" => "Unauthorized Access"
+        ]);
     }
 }
