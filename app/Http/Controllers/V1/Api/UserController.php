@@ -17,7 +17,7 @@ class UserController extends Controller
     public function index()
     {
         $user = Auth::user();
-        if($user->role === "system"){
+        if($user->role === "system" or $user->role === "course"){
             return UserResource::collection(User::query()->orderBy('name', 'asc')->paginate());
         }
         return response()->json([
