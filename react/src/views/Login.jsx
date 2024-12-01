@@ -2,6 +2,8 @@ import {Link} from "react-router-dom";
 import { useRef, useState } from "react";
 import axiosClient from "../axios-client";
 import { useStateContext } from "../contexts/ContextProvider";
+import "../style/index.css";
+import "../style/assests/favicon.ico";
 
 export default function Login(){
     const emailref = useRef();
@@ -41,10 +43,9 @@ export default function Login(){
     }
 
     return (
-        <div className="login-signup-form animated fadeInDown">
-            <div className="form">
-                <form onSubmit={onSubmit}>
-                    <h1 className="title">Login to your account</h1>
+        <>
+            <article className="form_group">
+                <form onSubmit={onSubmit} className="flex-column">
                     {errors && <div className="alert">
                         {Object.keys(errors).map(
                             key=>(
@@ -52,14 +53,27 @@ export default function Login(){
                             ))}
                     </div>
                     }
-                    <input ref={emailref} type="email" placeholder="Email" />
-                    <input ref={passwordref} type="password" placeholder="Password" />
-                    <button className="btn btn-block">Login</button>
-                    <p className="message">
-                        Not Registered? <Link to="/signup">Create an account</Link>
-                    </p>
+                    <label htmlFor="email">Email Address</label>
+                    <div className="email">
+                        <input ref={emailref} type="email" name="email" placeholder="Email" />
+                        <i className="icon fa-solid fa-user"></i>
+                    </div>
+                    <label htmlFor="password">Password</label>
+                    <div className="pass">
+                        <input ref={passwordref} type="password" name="password" placeholder="Password" />
+                        <i className="icon fa-solid fa-key"></i>
+                    </div>
+
+                    <div className="check">
+                        <input type="checkbox" name="remember" id="remember"/>
+                        <label htmlFor="remember">Remember Me</label>
+                    </div>
+                    <button className="btn btn-block">LOGIN</button>
                 </form>
-            </div>
-        </div>
+            </article>
+            <article className="text_area2">
+                    <p>Forgot your password? <Link to="">Let's Reset it!</Link></p>
+            </article>
+        </>
     )
 }
