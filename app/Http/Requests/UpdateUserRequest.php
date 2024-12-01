@@ -27,6 +27,7 @@ class UpdateUserRequest extends FormRequest
             "name" => "required|string",
             "email" => "required|email|unique:users,email".$this->id,
             "role" => Rule::in(['learner', 'system', 'course']),
+            'status' => ['required', Rule::in(['active', 'archive'])],
             "password" => [
                 'confirmed',
                 Password::min(8)->letters()->symbols()

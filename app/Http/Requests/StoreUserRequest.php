@@ -25,12 +25,15 @@ class StoreUserRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
+
+     //Role not required because the defaullt is learner
     public function rules(): array
     {
         return [
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'role' => Rule::in(['learner', 'system', 'course']),
+            'status' => ['required', Rule::in(['active', 'archive'])],
             'password' => ['required', 'confirmed', Password::min(8)->letters()->symbols()]
         ];
     }
