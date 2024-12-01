@@ -45,14 +45,6 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(User $user)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      */
     public function update(UpdateUserRequest $request, User $user)
@@ -71,6 +63,9 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $temp = $user->toArray();
+        $temp['status'] = "archive";
+        $user->update($temp);
+        return response("",204);
     }
 }
