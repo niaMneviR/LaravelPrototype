@@ -2,25 +2,25 @@
 
 
 @media only screen and (min-width: 480px) and (max-width: 1024px) {
-    main{
+    .main{
         margin-right: 0 !important;
     }
 
-    body{
+    .body{
         justify-content: center !important;
     }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px){
-    html{
+    .html{
         background-image: none !important;
         background-color: white;
     }
 
-    body{
+    .body{
         justify-content: center !important;
     }
 
-    main{
+    .main{
         margin-right: 0 !important;
         padding: 1.25rem;
 
@@ -68,19 +68,19 @@
     }
 }
 
-html{
+.html{
     background-image: url('./assests/Login_Background.png');
     background-size: cover;
 }
 
-main{
+.main{
     background-color: white;
     border-radius: 0.625rem;
     width: 24.375rem;
     padding: 3.125rem;
     margin-right: 1.875rem;
 }
-body{
+.body{
     display: flex;
     align-items: center;
     justify-content: flex-end;

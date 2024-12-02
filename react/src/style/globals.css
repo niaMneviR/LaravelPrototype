@@ -24,7 +24,7 @@
     --headerFont: 'Gilroy-Bold', sans-serif;
 }
 
-html, body{
+.html, .body{
     height: 100vh;
     margin: 0px;
 }

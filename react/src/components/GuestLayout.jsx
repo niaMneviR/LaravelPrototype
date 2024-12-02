@@ -26,17 +26,21 @@ export default function GuestLayout(){
     window.addEventListener("resize", updatelogo)
 
     return(
-        <main >
-            <section>
-                <article className="logo">
-                    <img src={fullLogo} alt="" id="logo" />
-                </article>
-                <article className="text_area1">
-                    <p>Prepare For Success,</p>
-                    <p>Access Your Training!</p>
-                </article>
-                <Outlet />
-            </section>
-        </main>
+        <div className="html">
+            <div className="body">
+                <div className="main">
+                    <section>
+                    <article className="logo">
+                        <img src={fullLogo} alt="" id="logo" />
+                    </article>
+                    <article className="text_area1">
+                        <p>Prepare For Success,</p>
+                        <p>Access Your Training!</p>
+                    </article>
+                    <Outlet />
+                    </section>
+                </div>
+            </div>
+        </div>
 )
 }
