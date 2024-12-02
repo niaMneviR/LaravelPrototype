@@ -3,7 +3,7 @@ import { useStateContext } from "../contexts/ContextProvider";
 import { useEffect } from "react";
 import axiosClient from "../axios-client";
 
-export default function DefaultLayout(){
+export default function CourseAdminLayout(){
     const {user, token, setUser, setToken} = useStateContext()
 
     
@@ -30,10 +30,10 @@ export default function DefaultLayout(){
     }, [])
 
     switch (user.role){
+        case "learner":
+            return <Navigate to='/dashboard'/>
         case "system":
             return <Navigate to='/systemAdminDashboard'/>
-        case "course":
-            return <Navigate to='/courseAdminDashboard'/>
     }
 
     return(

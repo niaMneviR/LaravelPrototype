@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 
-export default function Dashboard(){
+export default function SystemAdminDashboard(){
     return(
         <div>
-            Learner Dashboard
+            System Admin Dashboard
         </div>
     )
 }

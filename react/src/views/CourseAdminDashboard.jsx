@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 
-export default function Dashboard(){
+export default function CourseAdminDashboard(){
     return(
         <div>
-            Learner Dashboard
+            course Admin Dashboard
         </div>
     )
 }

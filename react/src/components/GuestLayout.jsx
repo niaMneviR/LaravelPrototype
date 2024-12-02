@@ -5,10 +5,10 @@ import fullLogo from "../style/assests/Full_Logo.svg";
 import smallLogo from "../style/assests/Small_Logo.svg";
 
 export default function GuestLayout(){
-    const {token} = useStateContext()
+    const {user, token, setUser} = useStateContext()
 
     if(token){
-        return <Navigate to='/users' />
+        return <Navigate to='/' />
     }
 
     function updatelogo(){
