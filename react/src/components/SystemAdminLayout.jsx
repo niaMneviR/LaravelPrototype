@@ -2,14 +2,15 @@ import { Link, Navigate, Outlet } from "react-router-dom";
 import { useStateContext } from "../contexts/ContextProvider";
 import { useEffect } from "react";
 import axiosClient from "../axios-client";
+import Navigation from "./Navigation";
+import sysAdd from "../style/system-admin.module.css"
+import Center from "./Center";
+import Side from "./Side";
 
 export default function SystemAdminLayout(){
     const {user, token, setUser, setToken} = useStateContext()
-
-    
     // TODO Implement different layout/navigation bar for each role
     // reference: https://react.dev/learn , updating the screen
-    
     if(!token){
         return <Navigate to='/login' />
     }
@@ -37,23 +38,8 @@ export default function SystemAdminLayout(){
     }
 
     return(
-        <div id="defaultLayout">
-            <aside>
-                <Link to="/dashboard">Dashboard</Link>
-                <Link to="/users">Users</Link>
-            </aside>
-            <div className="content">
-                <header>
-                    <div>Header</div>
-                    <div>
-                        {user.name}
-                        <a href="#" onClick={onLogout} className="btn-logout">Log out</a>
-                    </div>
-                </header>
-                <main>
-                    <Outlet/>
-                </main>
-            </div>
+        <div className={sysAdd.body}>
+            <Outlet/>
         </div>
     )
 }

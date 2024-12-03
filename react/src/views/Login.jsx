@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 import { useRef, useState } from "react";
 import axiosClient from "../axios-client";
 import { useStateContext } from "../contexts/ContextProvider";
-import "../style/index.css";
+import index from "../style/index.module.css";
 import "../style/assests/favicon.ico";
 
 export default function Login(){
@@ -44,9 +44,9 @@ export default function Login(){
 
     return (
         <>
-            <article className="form_group">
+            <article className={index.form_group}>
                 <form onSubmit={onSubmit} className="flex-column">
-                    {errors && <div className="alert">
+                    {errors && <div className={index.alert}>
                         {Object.keys(errors).map(
                             key=>(
                             <p key={key}>{errors[key][0]}</p>
@@ -54,24 +54,24 @@ export default function Login(){
                     </div>
                     }
                     <label htmlFor="email">Email Address</label>
-                    <div className="email">
+                    <div className={index.email}>
                         <input ref={emailref} type="email" name="email" placeholder="Email" />
-                        <i className="icon fa-solid fa-user"></i>
+                        <i className={`${index.icon} fa-solid fa-user`}></i>
                     </div>
                     <label htmlFor="password">Password</label>
-                    <div className="pass">
+                    <div className={index.pass}>
                         <input ref={passwordref} type="password" name="password" placeholder="Password" />
-                        <i className="icon fa-solid fa-key"></i>
+                        <i className={`${index.icon} fa-solid fa-key`}></i>
                     </div>
 
-                    <div className="check">
+                    <div className={index.check}>
                         <input type="checkbox" name="remember" id="remember"/>
                         <label htmlFor="remember">Remember Me</label>
                     </div>
-                    <button className="btn btn-block">LOGIN</button>
+                    <button className={index.btn}>LOGIN</button>
                 </form>
             </article>
-            <article className="text_area2">
+            <article className={index.text_area2}>
                     <p>Forgot your password? <Link to="">Let's Reset it!</Link></p>
             </article>
         </>

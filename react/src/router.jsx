@@ -38,16 +38,6 @@ const router = createBrowserRouter([
             {
                 path: '/systemAdminDashboard',
                 element: <SystemAdminDashboard/>
-            }
-        ]
-    },
-    {
-        path: '/',
-        element: <DefaultLayout />,
-        children: [
-            {
-                path: '/',
-                element: <Navigate to='/dashboard'/>
             },
             {
                 path: '/users',
@@ -60,6 +50,16 @@ const router = createBrowserRouter([
             {
                 path: '/users/:id',
                 element: <UserForm key="userUpdate"/>
+            },
+        ]
+    },
+    {
+        path: '/',
+        element: <DefaultLayout />,
+        children: [
+            {
+                path: '/',
+                element: <Navigate to='/dashboard'/>
             },
             {
                 path: '/dashboard',

@@ -1,13 +1,13 @@
 @import url(./globals.css);
 
 @media only screen and (min-width: 480px) and (max-width: 1024px){ 
-header{
+.header{
     position: sticky !important;
     top: 0px !important;
     z-index: 100; 
 }
 
-    main{
+    .main{
     padding: 0.938rem;
     width: 100vw !important;
     display: flex;
@@ -15,24 +15,24 @@ header{
     justify-content: center;
 }
 
-main .Center, main .Side{
+.main .Center, main .Side{
     width: 100% !important;
 }
 
 
-h1{
+.h1{
     font-family: var(--headerFont);
     color: var(--Primary-Color);
     font-size: large !important;
 }
 
-article{
+.article{
     display: flex;
     flex-direction: column !important;
 
 }}
 @media only screen and (min-width: 320px) and (max-width: 480px){
-    html, body{
+    .html, .body{
         flex-direction: column !important;
     }
 
@@ -53,7 +53,7 @@ article{
         margin-left: 1.25rem !important;
     }
 
-    header{
+    .header{
         width: 100%;
         height: 10vh;
         padding: 0px !important;
@@ -62,7 +62,7 @@ article{
         justify-content: space-between;
     }
 
-    nav{
+    .nav{
         position: fixed !important;
         bottom: 0px;
         height: auto !important;
@@ -82,7 +82,7 @@ article{
         font-size: x-large !important;
 
     }
-    main{
+    .main{
         padding: 0.938rem;
         width: 100vw !important;
         display: flex;
@@ -90,26 +90,26 @@ article{
         justify-content: center;
     }
 
-    main .Center, main .Side{
+    .main .Center, main .Side{
         width: 100% !important;
     }
 
 
-    h1{
+    .h1{
         font-family: var(--headerFont);
         color: var(--Primary-Color);
         text-align: center;
         font-size: large !important;
     }
 
-    article{
+    .article{
         display: flex;
         flex-direction: column !important;
     
     }
 }
 
-html, body{
+.html, .body{
     height: 100vh;
     width: 100vw;
     background-color: var(--DashboardBackground-Color);
@@ -117,18 +117,18 @@ html, body{
     flex-direction: row;
 }
 
-h1{
+.h1{
     font-family: var(--headerFont);
     color: var(--Primary-Color);
 }
 
-header{
+.header{
     display: inherit;
     align-items: center;
     padding: 0.625rem;
 }
 
-nav{
+.nav{
     background-color: white;
     padding: 0.625rem;
     height: 95vh;
@@ -181,20 +181,19 @@ li .label{
     width: 1.875rem;
 }
 
-main{
-    width: 93vw;
+.main{
+    width: 98%;
     padding: 10px 20px 10px 10px;;
 }
 
-article{
+.article{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     height: 90%;
-    border: 1px darkblue dashed;
 }
-main .Center{
+.main .Center{
     height: auto;
     width: 75%;
 }
@@ -226,18 +225,18 @@ main .Center{
     border-radius: 0.625rem;
 }
 
-.carousel-inner{
+.carousel_inner{
     height: 100%;
     width: auto;
     border-radius: 0.625rem;
 }
 
-.carousel-item{
+.carousel_item{
     height: 100%;
     width: 100%;
 }
 
-.carousel-item img{
+.carousel_item img{
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -258,7 +257,7 @@ main .Center{
     border-radius: 0.625rem;
 }
 
-main .Side{
+.main .Side{
     height: auto;
     width: 23%;
 }

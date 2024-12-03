@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useStateContext } from "../contexts/ContextProvider";
-import "../style/index.css";
+import index from "../style/index.module.css";
 import fullLogo from "../style/assests/Full_Logo.svg";
 import smallLogo from "../style/assests/Small_Logo.svg";
 
@@ -26,14 +26,14 @@ export default function GuestLayout(){
     window.addEventListener("resize", updatelogo)
 
     return(
-        <div className="html">
-            <div className="body">
-                <div className="main">
+        <div className={index.html}>
+            <div className={index.body}>
+                <div className={index.main}>
                     <section>
-                    <article className="logo">
-                        <img src={fullLogo} alt="" id="logo" />
+                    <article className={index.logo}>
+                        <img className={index.img}src={fullLogo} alt="" id="logo" />
                     </article>
-                    <article className="text_area1">
+                    <article className={index.text_area1}>
                         <p>Prepare For Success,</p>
                         <p>Access Your Training!</p>
                     </article>

@@ -31,7 +31,7 @@
         align-items: center;
     }
 
-    .logo img{
+    .img{
         height: 3.75rem !important;
         width: auto;
         margin-bottom: 1.875rem !important;
@@ -165,6 +165,7 @@ form input[type="submit"]{
 
 .btn{
     padding: 0.625rem;
+    width: 100%;
     border-radius: 0.313rem;
     border: none;
     background-color: var(--Primary-Color);
