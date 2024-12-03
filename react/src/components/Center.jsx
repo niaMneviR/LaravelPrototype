@@ -29,7 +29,7 @@ export default function Center(){
                     </div>
                 </div>
                 <div className={sysAdd.Center_Content}>
-                    <p>Hello world niggas!</p>
+                    
                 </div>
         </section>
     )
