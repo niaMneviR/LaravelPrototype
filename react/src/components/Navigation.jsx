@@ -2,10 +2,22 @@ import { Link, Navigate, Outlet } from "react-router-dom";
 import smallLogo from "../style/assests/Small_Logo.svg"
 import sysAdd from "../style/system-admin.module.css"
 import { useEffect, useState } from "react";
+import { useStateContext } from "../contexts/ContextProvider";
+import axiosClient from "../axios-client";
 
 
 export default function Navigation(){
+    const {user, token, setUser, setToken} = useStateContext()
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    const onLogout = (ev) => {
+        ev.preventDefault()
+
+        axiosClient.post('/logout').then(()=>{
+            setUser({})
+            setToken(null)
+        })
+    }
 
     useEffect(() => {
         const handleResize = () => {
@@ -59,7 +71,7 @@ export default function Navigation(){
                     </Link>
                 </li>
                 <li> 
-                    <Link to="user-list.html">
+                    <Link to="/users">
                         <i class="fa-solid fa-user-group icon" id={sysAdd.icon} data-target="label3"></i> 
                         <span class={sysAdd.label}  id="label3">User Management</span>
                     </Link>
@@ -84,7 +96,11 @@ export default function Navigation(){
             <ul class={`${sysAdd.users} users`} id="ul-to-move">
                 <li> <i class="fa-solid fa-gear"></i></li>
                 <li> <i class="fa-solid fa-bell"></i> </li>
-                <li> <i class="fa-solid fa-user"></i> </li>
+                <li> 
+                    <a href="#" onClick={onLogout} className="btn-logout">
+                        <i class="fa-solid fa-user"></i> 
+                    </a>
+                </li>
             </ul>
         </nav>
     )
