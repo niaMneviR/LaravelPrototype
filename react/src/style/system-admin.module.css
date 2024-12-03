@@ -90,7 +90,7 @@
         justify-content: center;
     }
 
-    .main .Center, main .Side{
+    .main .Center, .main .Side{
         width: 100% !important;
     }
 

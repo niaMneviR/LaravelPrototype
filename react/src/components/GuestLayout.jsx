@@ -29,7 +29,7 @@ export default function GuestLayout(){
         <div className={index.html}>
             <div className={index.body}>
                 <div className={index.main}>
-                    <section>
+                    <div>
                     <article className={index.logo}>
                         <img className={index.img}src={fullLogo} alt="" id="logo" />
                     </article>
@@ -38,7 +38,7 @@ export default function GuestLayout(){
                         <p>Access Your Training!</p>
                     </article>
                     <Outlet />
-                    </section>
+                    </div>
                 </div>
             </div>
         </div>
