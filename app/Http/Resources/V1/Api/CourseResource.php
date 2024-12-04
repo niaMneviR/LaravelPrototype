@@ -24,7 +24,7 @@ class CourseResource extends JsonResource
             'mandatory'=>$this->mandatory,
             'duration'=>$this->duration,
             'isArchived'=>$this->archived,
-            'createdAt' => $this->created_at->format('Y-m-d H:i:s'),
+            'createdAt' => $this->created_at->format('Y-m-d'),
 
         ];
     }

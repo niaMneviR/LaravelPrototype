@@ -139,26 +139,26 @@
 
 }
 
-ul{
+.ul{
     list-style: none;
     padding: 0.625rem;
     margin: 0;
     
 }
 
-li{
+.li{
     padding: 0.625rem 0px;
     display: flex;
     justify-content: center;
 }
 
-li i{
+.li i{
     font-size: 1.25rem;
     color: var(--Unactive-Color);
     transition: color, 0.5s;
 }
 
-li i:hover{
+.li i:hover{
     cursor: pointer;
     color: var(--Primary-Color);
 }

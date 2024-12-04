@@ -11,6 +11,7 @@ import CourseAdminLayout from "./components/CourseAdminLayout.jsx";
 import CourseAdminDashboard from "./views/courseAdminDashboard.jsx";
 import SystemAdminLayout from "./components/SystemAdminLayout.jsx";
 import SystemAdminDashboard from "./views/systemAdminDashboard.jsx";
+import Courses from "./views/Courses.jsx";
 
 const router = createBrowserRouter([
     {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
             {
                 path: '/courseAdminDashboard',
                 element: <CourseAdminDashboard/>
-            }
+            },
         ]
     },
     {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
             {
                 path: '/users/:id',
                 element: <UserForm key="userUpdate"/>
+            },
+            {
+                path: '/courses',
+                element: <Courses/>
             },
         ]
     },
