@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         $user = Auth::user();
         if($user->role === "system" or $user->role === "course"){
-            return UserResource::collection(User::query()->orderBy('name', 'asc')->paginate());
+            return UserResource::collection(User::query()->orderBy('name', 'asc')->paginate(6));
         }
         return response()->json([
             'message' => 'unauthorized access'
