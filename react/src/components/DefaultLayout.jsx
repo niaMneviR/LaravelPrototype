@@ -43,6 +43,7 @@ export default function DefaultLayout(){
             <header id={sysAdd.nav}>
                 <Navigation />
             </header>
+            learner
         </div>
     )
 }

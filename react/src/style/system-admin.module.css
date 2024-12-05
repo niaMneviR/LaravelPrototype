@@ -146,6 +146,10 @@
     
 }
 
+.yo{
+    padding-left: 0;
+}
+
 .li{
     padding: 0.625rem 0px;
     display: flex;
@@ -163,7 +167,7 @@
     color: var(--Primary-Color);
 }
 
-li .label{
+.li .label{
     display: none;
     font-family: var(--textFont);
     background-color: hsl(0, 0%, 20%);

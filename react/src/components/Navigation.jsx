@@ -93,7 +93,7 @@ export default function Navigation(){
                     <span className={sysAdd.label}  id="label7">System Activity Logs</span>    
                 </li>
             </ul>
-            <ul className={`${sysAdd.users} users`} id="ul-to-move">
+            <ul className={`${sysAdd.users} ${sysAdd.yo} users`} id="ul-to-move">
                 <li className={sysAdd.li}> <i className="fa-solid fa-gear"></i></li>
                 <li className={sysAdd.li}> <i className="fa-solid fa-bell"></i> </li>
                 <li className={sysAdd.li}> 
