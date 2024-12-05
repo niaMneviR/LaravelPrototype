@@ -33,6 +33,8 @@ class StoreUserRequest extends FormRequest
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'role' => Rule::in(['learner', 'system', 'course']),
+            'branch'=> 'required',
+            'department' => 'required',
             'status' => ['required', Rule::in(['active', 'archive'])],
             'password' => ['required', 'confirmed', Password::min(8)->letters()->symbols()]
         ];
