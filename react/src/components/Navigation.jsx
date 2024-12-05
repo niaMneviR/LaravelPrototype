@@ -1,4 +1,4 @@
-import { Link, Navigate, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import smallLogo from "../style/assests/Small_Logo.svg"
 import sysAdd from "../style/system-admin.module.css"
 import { useEffect, useState } from "react";
@@ -9,6 +9,7 @@ import axiosClient from "../axios-client";
 export default function Navigation(){
     const {user, token, setUser, setToken} = useStateContext()
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const navigate = useNavigate();
 
     const onLogout = (ev) => {
         ev.preventDefault()
@@ -16,7 +17,9 @@ export default function Navigation(){
         axiosClient.post('/logout').then(()=>{
             setUser({})
             setToken(null)
+            
         })
+        navigate('/login');
     }
 
     useEffect(() => {

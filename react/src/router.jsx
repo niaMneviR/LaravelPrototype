@@ -16,6 +16,20 @@ import Courses from "./views/Courses.jsx";
 const router = createBrowserRouter([
     {
         path: '/',
+        element: <GuestLayout />,
+        children:[
+            {
+                path: '/login',
+                element: <Login />
+            },
+            {
+                path: '/',
+                element: <Navigate to='/login'/>
+            }
+        ]
+    },
+    {
+        path: '/',
         element: <CourseAdminLayout/>,
         children:[
             {
@@ -71,16 +85,6 @@ const router = createBrowserRouter([
                 element: <Dashboard />
             },
         ],
-    },
-    {
-        path: '/',
-        element: <GuestLayout />,
-        children:[
-            {
-                path: '/login',
-                element: <Login />
-            },
-        ]
     },
     {
         path: '*',

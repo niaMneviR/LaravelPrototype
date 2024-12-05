@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import { useStateContext } from "../contexts/ContextProvider";
 import index from "../style/index.module.css";
 import fullLogo from "../style/assests/Full_Logo.svg";
@@ -6,9 +6,17 @@ import smallLogo from "../style/assests/Small_Logo.svg";
 
 export default function GuestLayout(){
     const {user, token, setUser} = useStateContext()
-
+    const navigate = useNavigate();
+    
     if(token){
-        return <Navigate to='/' />
+        switch(user.role){
+            case "learner":
+                navigate('/dashboard');
+            case "course":
+                navigate('/courseAdminDashboard');
+            case "system":
+                navigate('/systemAdminDashboard');
+        }
     }
 
     function updatelogo(){

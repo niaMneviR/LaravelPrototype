@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { useRef, useState } from "react";
 import axiosClient from "../axios-client";
 import { useStateContext } from "../contexts/ContextProvider";
@@ -9,7 +9,8 @@ export default function Login(){
     const emailref = useRef();
     const passwordref = useRef();
     const [errors, setErrors] = useState(null);
-    const {setUser,setToken} = useStateContext();
+    const {user, setUser,setToken} = useStateContext();
+    const navigate = useNavigate();
 
     const onSubmit = (ev) => {
         ev.preventDefault()
