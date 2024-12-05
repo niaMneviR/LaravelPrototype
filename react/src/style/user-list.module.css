@@ -18,6 +18,11 @@
     font-size: large;
     color: var(--Primary-Color);
 }
+
+.input{
+    margin: 1rem;
+}
+
 .search i{
     font-size: x-large;
     
