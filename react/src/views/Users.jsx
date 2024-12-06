@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import sysAdd from "../style/system-admin.module.css"
 import list from "../style/user-list.module.css";
+import load from "../style/assests/At the office-amico.svg"
 
 export default function Users(){
     const [users, setUsers] = useState([]);
@@ -95,7 +96,10 @@ export default function Users(){
                             {loading && <tbody>
                             <tr>
                                 <td colSpan="5" className="text-center">
-                                    Loading...
+                                    <div>
+                                        <img src={load} alt="" className={sysAdd.img} />
+                                        <p>Loading . . .</p>
+                                    </div>
                                 </td>
                             </tr>
                             </tbody>}

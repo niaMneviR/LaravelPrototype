@@ -246,6 +246,21 @@
     object-fit: cover;
 }
 
+.img{
+    height: 50%;
+    width: 50%;
+}
+
+.child{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.testCenter{
+    position:relative;
+}
+
 .Center_Content{
     border-radius: 0.625rem;
     background-color: white;
