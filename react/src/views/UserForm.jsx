@@ -123,8 +123,11 @@ export default function UserForm(){
                                 <td>
                                     <input type="password" onChange={ev => setUser({...user, password_confirmation: ev.target.value})} placeholder="Confirm Password" />
                                 </td>
-                                <td><input type="submit" value="Save" /></td>
+                                
                             </tr>
+                        </tbody>
+                        <tbody>
+                            <td colSpan={8}><td><input type="submit" value="Save" /></td></td>
                         </tbody>
                     </table>
                     </form>
