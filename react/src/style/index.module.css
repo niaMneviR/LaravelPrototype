@@ -1,0 +1,174 @@
+@import "./globals.css";
+
+
+@media only screen and (min-width: 480px) and (max-width: 1024px) {
+    .main{
+        margin-right: 0 !important;
+    }
+
+    .body{
+        justify-content: center !important;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px){
+    .html{
+        background-image: none !important;
+        background-color: white;
+    }
+
+    .body{
+        justify-content: center !important;
+    }
+
+    .main{
+        margin-right: 0 !important;
+        padding: 1.25rem;
+
+    }
+    .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img{
+        height: 3.75rem !important;
+        width: auto;
+        margin-bottom: 1.875rem !important;
+    }
+
+    .text_area1 p{
+        font-size: 1.25rem !important;
+        text-align: center;
+    }
+
+    .email, .pass{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    form .email input, .pass input{
+        width: 100% !important;
+        height: 1.563rem !important; 
+    }
+
+    form .email .icon, .pass .icon{
+        font-size: larger !important;
+    }
+
+    form input[type="text"], 
+    input[type="email"], 
+    input[type="password"] { 
+    font-size: small !important;
+    }
+    
+    label{
+        font-size: small;
+    }
+}
+
+.html{
+    background-image: url('./assests/Login_Background.png');
+    background-size: cover;
+}
+
+.main{
+    background-color: white;
+    border-radius: 0.625rem;
+    padding: 3.125rem;
+    margin-right: 1.875rem;
+}
+.body{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.logo img{
+    height: 1.875rem;
+    width: auto;
+    margin-bottom: 3.125rem;
+}
+
+.text_area1 p{
+    font-family: var(--headerFont);
+    font-size: 2.188rem;
+    color: var(--Primary-Color);
+    margin: 0px;
+}
+.text_area1{
+    margin-bottom: 2.5rem;
+}
+
+form{
+    font-family: var(--textFont);
+    color: var(--Primary-Color);
+    
+}
+form .email input, .pass input{
+    width: 90%;
+    height: 1.875rem;
+}
+form .email .icon, .pass .icon{
+    font-size: x-large;
+}
+
+form input[type="text"], 
+    input[type="email"], 
+    input[type="password"] { 
+    border: none; 
+    outline: none; 
+    font-family: var(--textFont);
+    font-size: medium;
+    color: var(--Primary-Color);
+} 
+form .email, form .pass{
+    border-bottom: var(--Primary-Color) 0.063rem solid;
+    margin-bottom: 1.25rem;
+}
+
+.check{
+    margin-bottom: 2.5rem;
+}
+
+form input[type="submit"]{
+    padding: 0.625rem;
+    border-radius: 0.313rem;
+    border: none;
+    background-color: var(--Primary-Color);
+    color: white;
+    font-size: medium;
+    font-family: var(--headerFont);
+}
+
+.form_group{
+    margin-bottom: 60px;
+}
+
+.text_area2{
+    text-align: center;
+    margin: 0px;
+    font-size: small;
+    font-family: var(--textFont);
+    color: var(--Unactive-Color);
+}
+
+.text_area2 p{
+    margin: 0px;
+}
+.text_area2 a{
+    color: var(--Primary-Color);
+    text-decoration: none;
+}
+
+.btn{
+    padding: 0.625rem;
+    width: 100%;
+    border-radius: 0.313rem;
+    border: none;
+    background-color: var(--Primary-Color);
+    color: white;
+    font-size: medium;
+    font-family: var(--headerFont);
+}

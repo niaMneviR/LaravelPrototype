@@ -1,0 +1,36 @@
+@font-face {
+    font-family: Gilroy-Regular;
+    src: url('./font/Gilroy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Gilroy-Bold;
+    src: url('./font/Gilroy-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+:root{
+    /*Colors*/
+    --Primary-Color: hsl(218,97%,26%);
+    --Unactive-Color: hsl(0,0%,40%);
+    --DashboardBackground-Color: hsl(0,0%,90%);
+
+    /* Font */
+    --textFont: 'Gilroy-Regular', sans-serif;
+    --headerFont: 'Gilroy-Bold', sans-serif;
+}
+
+.html, .body{
+    height: 100vh;
+    margin: 0px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
