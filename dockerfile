@@ -34,9 +34,12 @@ EXPOSE 80
 # Start Apache server
 
 
-# Install dependencies and set up Laravel
-RUN composer install --no-dev --optimize-autoloader
-RUN php artisan key:generate
-RUN php artisan migrate --force
+# Install PHP dependencies using Composer
+RUN composer install --optimize-autoloader --no-dev
+
+# Copy the example environment file to .env
+RUN cp .env.example .env
+
+# Generate the application key
 
 CMD ["php", "artisan", "serve", "--host", "0.0.0.0", "--port", "8080"]
