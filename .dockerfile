@@ -32,4 +32,11 @@ RUN chown -R www-data:www-data /var/www/html \
 EXPOSE 80
 
 # Start Apache server
-CMD ["apache2-foreground"]
+
+
+# Install dependencies and set up Laravel
+RUN composer install --no-dev --optimize-autoloader
+RUN php artisan key:generate
+RUN php artisan migrate --force
+
+CMD ["php", "artisan", "serve", "--host", "0.0.0.0", "--port", "8080"]
