@@ -14,30 +14,30 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->count(25)->create();
-        DB::table('users')->insert([
-            'name' => 'acb',
-            'email' => 'acb@gmail',
-            'branch'=> 'Novaliches',
-            'department'=> 'IT Department',
-            'password' => Hash::make('asdfghjkl!'),
-            'role'=> 'learner'
-        ]);
-        DB::table('users')->insert([
-            'name' => 'acb',
-            'email' => 'acb@gmail.com',
-            'branch'=> 'Novaliches',
-            'department'=> 'IT Department',
-            'password' => Hash::make('asdfghjkl!'),
-            'role'=> 'system'
-        ]);
-        DB::table('users')->insert([
-            'name' => 'acb',
-            'email' => 'acb@gmail.co',
-            'branch'=> 'Novaliches',
-            'department'=> 'IT Department',
-            'password' => Hash::make('asdfghjkl!'),
-            'role'=> 'course'
-        ]);
+        User::factory()->count(25)->hasEnrollment(5)->create();
+        // DB::table('users')->insert([
+        //     'name' => 'acb',
+        //     'email' => 'acb@gmail',
+        //     'branch'=> 'Novaliches',
+        //     'department'=> 'IT Department',
+        //     'password' => Hash::make('asdfghjkl!'),
+        //     'role'=> 'learner'
+        // ]);
+        // DB::table('users')->insert([
+        //     'name' => 'acb',
+        //     'email' => 'acb@gmail.com',
+        //     'branch'=> 'Novaliches',
+        //     'department'=> 'IT Department',
+        //     'password' => Hash::make('asdfghjkl!'),
+        //     'role'=> 'system'
+        // ]);
+        // DB::table('users')->insert([
+        //     'name' => 'acb',
+        //     'email' => 'acb@gmail.co',
+        //     'branch'=> 'Novaliches',
+        //     'department'=> 'IT Department',
+        //     'password' => Hash::make('asdfghjkl!'),
+        //     'role'=> 'course'
+        // ]);
     }
 }
