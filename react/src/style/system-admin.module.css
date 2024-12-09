@@ -1,10 +1,10 @@
 @import url(./globals.css);
 
-@media only screen and (min-width: 480px) and (max-width: 1024px){ 
+@media only screen and (min-width: 480px) and (max-width: 1024px){
 .header{
     position: sticky !important;
     top: 0px !important;
-    z-index: 100; 
+    z-index: 100;
 }
 
     .main{
@@ -105,19 +105,17 @@
     .article{
         display: flex;
         flex-direction: column !important;
-    
+
     }
 }
 
-.html, .body{
-    height: 100vh;
-    width: 100vw;
+:global(.body){
     background-color: var(--DashboardBackground-Color);
     display: flex;
     flex-direction: row;
 }
 
-.h1{
+h1{
     font-family: var(--headerFont);
     color: var(--Primary-Color);
 }
@@ -139,35 +137,31 @@
 
 }
 
-.ul{
+ul{
     list-style: none;
     padding: 0.625rem;
     margin: 0;
-    
+
 }
 
-.yo{
-    padding-left: 0;
-}
-
-.li{
+li{
     padding: 0.625rem 0px;
     display: flex;
     justify-content: center;
 }
 
-.li i{
+li i{
     font-size: 1.25rem;
     color: var(--Unactive-Color);
     transition: color, 0.5s;
 }
 
-.li i:hover{
+li i:hover{
     cursor: pointer;
     color: var(--Primary-Color);
 }
 
-.li .label{
+li .label{
     display: none;
     font-family: var(--textFont);
     background-color: hsl(0, 0%, 20%);
