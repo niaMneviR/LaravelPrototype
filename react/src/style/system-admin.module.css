@@ -209,11 +209,20 @@ li .label{
     width: 100%;
     gap: 15px;
     justify-content: space-between;
-    transition: 0.5 ease;
+    transition: 0.5s ease;
     color: var(--Unactive-Color);
 }
 
-.account_setting_options .option:hover{
+.account_setting_options .option a{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--Unactive-Color);
+}
+
+.account_setting_options .option:hover a{
     color: white;
     cursor: pointer;
 }

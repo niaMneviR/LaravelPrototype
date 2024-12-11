@@ -149,7 +149,7 @@ export default function Navigation(){
                                     Login as Learner
                                     <i class="fa-solid fa-graduation-cap"></i>
                                 </Link>
-                                
+
                             </li>
                             <li className={sysAdd.option}>
                             <a href="#" onClick={onLogout} className="btn-logout">
@@ -157,7 +157,7 @@ export default function Navigation(){
                                     <i class="fa-solid fa-right-from-bracket"></i>
                             </a>
                             </li>
-                            <li><div class="divider"></div></li>
+                            <li><div className={sysAdd.divider}></div></li>
                             <li className={sysAdd.option}>
                                 View Profile
                                 <i class="fa-solid fa-user"></i>
