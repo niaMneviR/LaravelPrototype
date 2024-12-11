@@ -16,7 +16,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return CourseResource::collection(Course::query()->orderBy('name', 'asc')->paginate());
+        return CourseResource::collection(Course::query()->where('archived', '=', 'active')->orderBy('name', 'asc')->paginate());
     }
 
     /**
@@ -42,10 +42,6 @@ class CourseController extends Controller
     public function update(UpdateCourseRequest $request, Course $course)
     {
         $temp = $course->update($request->all());
-
-        return response(new CourseResource($temp), 204)->json([
-            $temp
-        ]);
     }
 
     /**

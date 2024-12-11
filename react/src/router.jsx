@@ -14,6 +14,7 @@ import SystemAdminDashboard from "./views/systemAdminDashboard.jsx";
 import Courses from "./views/Courses.jsx";
 import CourseAdminCourses from "./views/CourseAdminCourses.jsx";
 import Enrollment from "./views/Enrollment.jsx";
+import CourseForm from "./views/CourseForm.jsx";
 
 const router = createBrowserRouter([
     {
@@ -80,6 +81,14 @@ const router = createBrowserRouter([
                 path: '/courses',
                 element: <Courses/>
             },
+            {
+                path: '/courses/:id',
+                element: <CourseForm key="courseUpdate"/>
+            },
+            {
+                path: '/courses/new',
+                element: <CourseForm key="courseUpdate"/>
+            }
         ]
     },
     {

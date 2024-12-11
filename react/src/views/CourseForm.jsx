@@ -5,40 +5,42 @@ import Navigation from "../components/Navigation";
 import sysAdd from "../style/system-admin.module.css"
 import userForm from "../style/userform.module.css"
 
-export default function UserForm(){
+export default function CourseForm(){
     const {id} = useParams()
     const navigate = useNavigate()
     const [loading, setLoading] = useState(false)
     const [errors, setErrors] = useState(null)
-    const [user, setUser] = useState({
+    const [course, setCourse] = useState({
         id:null,
         name: '',
-        email: '',
-        role: '',
-        department: '',
-        branch: '',
-        password: '',
-        password_confirmation: ''
+        code: '',
+        description: '',
+        type: '',
+        training_mode: '',
+        mandatory: '',
+        duration: '',
+        archived: '',
     })
 
-    // dear future me, ginawa to para d mawala ung name sa taas, ewan ko kung bkit nawawala pag user lang ginamit
+    // dear future me, ginawa to para d mawala ung name sa taas, ewan ko kung bkit nawawala pag course lang ginamit
     const [temp, setTemp] = useState({
         id:null,
         name: '',
-        email: '',
-        role: '',
-        department: '',
-        branch: '',
-        password: '',
-        password_confirmation: ''
+        code: '',
+        description: '',
+        type: '',
+        training_mode: '',
+        mandatory: '',
+        duration: '',
+        archived: '',
     })
 
     if(id){
         useEffect(()=>{
             setLoading(true)
-            axiosClient.get(`/users/${id}`).then(({data})=>{
+            axiosClient.get(`/courses/${id}`).then(({data})=>{
                 setLoading(false)
-                setUser(data.data)
+                setCourse(data.data)
                 setTemp(data.data)
             })
             .catch(()=>{
@@ -49,10 +51,10 @@ export default function UserForm(){
 
     const onSubmit = (ev) => {
         ev.preventDefault();
-        if(user.id){
-            axiosClient.put(`/users/${user.id}`, user).then(()=>{
+        if(course.id){
+            axiosClient.put(`/courses/${course.id}`, course).then(()=>{
                 //TODO Notification
-                navigate('/users')
+                navigate('/courses')
             }).catch(err=>{
                 const response = err.response;
                 if (response && response.status == 422){
@@ -61,9 +63,9 @@ export default function UserForm(){
             })
         }
         else{
-            axiosClient.post(`/users`, user).then(()=>{
+            axiosClient.post(`/courses`, course).then(()=>{
                 //TODO Notification
-                navigate('/users')
+                navigate('/courses')
             }).catch(err=>{
                 const response = err.response;
                 if (response && response.status == 422){
@@ -80,8 +82,8 @@ export default function UserForm(){
                 <Navigation/>
             </header>
             <div className={userForm.main}>
-                {temp.id && <h1 className={sysAdd.h1}>Update User: {temp.name}</h1>}
-                {!temp.id && !loading && <h1 className={sysAdd.h1}>New User</h1>}
+                {temp.id && <h1 className={sysAdd.h1}>Update course: {temp.name}</h1>}
+                {!temp.id && !loading && <h1 className={sysAdd.h1}>New course</h1>}
                 <div className={userForm.Form}>
                     {!loading &&
                     <form onSubmit={onSubmit}>
@@ -89,41 +91,41 @@ export default function UserForm(){
                             <div className={userForm.Formrow}>
                                 <div className={userForm.formgroup}>
                                     <label>Name</label>
-                                    <input type="text" value={user.name} onChange={ev => setUser({...user, name: ev.target.value})} placeholder="Name" />
+                                    <input type="text" value={course.name} onChange={ev => setCourse({...course, name: ev.target.value})}  />
                                 </div>
                             </div>
                             <div className={userForm.Formrow}>
                                 <div className={userForm.formgroup}>
-                                    <label>Email</label>
-                                    <input type="email" value={user.email} onChange={ev => setUser({...user, email: ev.target.value})} placeholder="Email" />
+                                    <label>Course Code</label>
+                                    <input type="text" value={course.code} onChange={ev => setCourse({...course, code: ev.target.value})}  />
                                 </div>
                                 <div className={userForm.formgroup}>
-                                    <label>Role</label>
-                                    <input type="text" value={user.role} onChange={ev => setUser({...user, role: ev.target.value})} placeholder="Role" />
+                                    <label>Description</label>
+                                    <input type="text" value={course.description} onChange={ev => setCourse({...course, description: ev.target.value})}  />
                                 </div>
                             </div>
                             <div className={userForm.Formrow}>
                                 <div className={userForm.formgroup}>
-                                    <label>Department</label>
-                                    <input type="text" value={user.department} onChange={ev => setUser({...user, department: ev.target.value})} placeholder="Department" />
+                                    <label>Course Type</label>
+                                    <input type="text" value={course.type} onChange={ev => setCourse({...course, type: ev.target.value})}  />
                                 </div>
                                 <div className={userForm.formgroup}>
-                                    <label>Branch</label>
-                                    <input type="text" value={user.branch} onChange={ev => setUser({...user, branch: ev.target.value})} placeholder="Branch" />
+                                    <label>Training Mode</label>
+                                    <input type="text" value={course.training_mode} onChange={ev => setCourse({...course, training_mode: ev.target.value})}  />
                                 </div>
                             </div>
                             <div className={userForm.Formrow}>
+                                <div className={userForm.formgroup}>
+                                    <label>Mandatory</label>
+                                    <input type="text" value={course.mandatory} onChange={ev => setCourse({...course, mandatory: ev.target.value})}  />
+                                </div>
+                                <div className={userForm.formgroup}>
+                                    <label>Duration</label>
+                                    <input type="text" value={course.duration} onChange={ev => setCourse({...course, duration: ev.target.value})}  />
+                                </div>
                                 <div className={userForm.formgroup}>
                                     <label>Status</label>
-                                    <input type="text" value={user.status} onChange={ev => setUser({...user, status: ev.target.value})} placeholder="Status" />
-                                </div>
-                                <div className={userForm.formgroup}>
-                                    <label>Password</label>
-                                    <input type="password" onChange={ev => setUser({...user, password: ev.target.value})} placeholder="Password" />
-                                </div>
-                                <div className={userForm.formgroup}>
-                                    <label>Confirm Password</label>
-                                    <input type="password" onChange={ev => setUser({...user, password_confirmation: ev.target.value})} placeholder="Confirm Password" />
+                                    <input type="text" value={course.archived} onChange={ev => setCourse({...course, archived: ev.target.value})} />
                                 </div>
                             </div>
                             <div className={userForm.Formrow}>

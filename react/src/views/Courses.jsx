@@ -4,6 +4,7 @@ import sysAdd from "../style/system-admin.module.css";
 import axiosClient from "../axios-client";
 import cou from "../style/course-list.module.css";
 import load from "../style/assests/At the office-amico.svg"
+import { Link } from "react-router-dom";
 
 
 export default function Courses(){
@@ -26,7 +27,7 @@ export default function Courses(){
     }
 
     const onDelete = (u) =>{
-        if(!window.confirm("Are you sure you want to delete this user?")){
+        if(!window.confirm("Are you sure you want to delete this course?")){
             return
         }
         axiosClient.delete(`/courses/${u.id}`).then(()=>{
@@ -88,8 +89,8 @@ export default function Courses(){
                                 </ul>
                             </div>
                             <div className={cou.action}>
-                                <button className={cou.button}>Edit</button>
-                                <button className={cou.button}>Delete</button>
+                                <Link to={"/courses/"+ u.id}><button className={cou.button}>Edit</button></Link>
+                                <button onClick={ev => onDelete(u)} className={cou.button}>Delete</button>
                             </div>
                         </section>
                     </div>
@@ -100,7 +101,7 @@ export default function Courses(){
 
                 </section>
                 <div className={`${sysAdd.Side} Side ${cou.filters} `}>
-                    <button className={cou.add_course} onClick="">+ Add Courses</button>
+                    <Link to={"/courses/new"}><button className={cou.add_course}>+ Add Courses</button></Link>
                     <section className={cou.filters}>
                         <div className={cou.filter_header}>
                             <h1 className={sysAdd.h1}>Filter</h1>
