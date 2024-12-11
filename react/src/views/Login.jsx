@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import axiosClient from "../axios-client";
 import { useStateContext } from "../contexts/ContextProvider";
 import index from "../style/index.module.css";
-import "../style/assests/favicon.ico";
+
 
 export default function Login(){
     const emailref = useRef();
@@ -14,7 +14,7 @@ export default function Login(){
 
     const onSubmit = (ev) => {
         ev.preventDefault()
-        
+
         const payload = {
             email: emailref.current.value,
             password: passwordref.current.value,

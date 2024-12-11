@@ -2,9 +2,11 @@ import sysAdd from "../style/system-admin.module.css"
 import slide1 from "../style/assests/slides/1.png"
 import slide2 from "../style/assests/slides/2.png"
 import slide3 from "../style/assests/slides/3.png"
+import pr1 from "../style/assests/prototype/1.png"
+import pr2 from "../style/assests/prototype/2.png"
 
 export default function Center(){
-    
+
     return(
         <section className={sysAdd.Center}>
                 <div className={sysAdd.announcement}>
@@ -29,7 +31,12 @@ export default function Center(){
                     </div>
                 </div>
                 <div className={sysAdd.Center_Content}>
-                    
+                    <div className={sysAdd.panel}>
+                        <img src={pr1} alt="" />
+                    </div>
+                    <div className={sysAdd.panel}>
+                        <img src={pr2} alt="" />
+                    </div>
                 </div>
         </section>
     )
