@@ -32,8 +32,6 @@ export default function CourseAdminLayout(){
     switch (user.role){
         case "learner":
             return <Navigate to='/dashboard'/>
-        case "system":
-            return <Navigate to='/systemAdminDashboard'/>
     }
 
     return(

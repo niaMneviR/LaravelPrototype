@@ -31,13 +31,6 @@ export default function DefaultLayout(){
         })
     }, [])
 
-    switch (user.role){
-        case "system":
-            return <Navigate to='/systemAdminDashboard'/>
-        case "course":
-            return <Navigate to='/courseAdminDashboard'/>
-    }
-
     return(
         <div className={sysAdd.body}>
             <header id={sysAdd.nav}>
