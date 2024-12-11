@@ -1,0 +1,33 @@
+@import url('./globals.css');
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.Form{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.Form .Formrow{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0px 10px 0px ;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.Form .Formrow input{
+    border: 1px solid;
+
+}
+
+.formgroup{
+    display: flex;
+    gap: 10px;
+}

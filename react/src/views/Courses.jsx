@@ -94,10 +94,10 @@ export default function Courses(){
                         </section>
                     </div>
                     ))}
-                    
+
                 </div>
                     }
-                    
+
                 </section>
                 <div className={`${sysAdd.Side} Side ${cou.filters} `}>
                     <button className={cou.add_course} onClick="">+ Add Courses</button>
