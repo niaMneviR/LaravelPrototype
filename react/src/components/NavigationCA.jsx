@@ -18,9 +18,8 @@ export default function Navigation(){
         axiosClient.post('/logout').then(()=>{
             setUser({})
             setToken(null)
-
+            navigate('/login');
         })
-        navigate('/login');
     }
 
     useEffect(() => {
@@ -125,6 +124,14 @@ export default function Navigation(){
                     <img src={img} alt="" className={sysAdd.icon} id="pfp"/>
                     <div className={`${sysAdd.label} ${sysAdd.account_setting}`} id="list">
                     <ul className={sysAdd.account_setting_options}>
+                        {user.role === "system" &&
+                            <li className={sysAdd.option}>
+                                <Link to="/systemAdminDashboard">
+                                    Login as System Admin
+                                    <i class="fa-solid fa-book-open-reader"></i>
+                                </Link>
+                            </li>
+                        }
                             <li className={sysAdd.option}>
                                 <Link to="/dashboard">
                                     Login as Learner

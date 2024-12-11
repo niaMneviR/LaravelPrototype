@@ -18,9 +18,9 @@ export default function Navigation(){
         axiosClient.post('/logout').then(()=>{
             setUser({})
             setToken(null)
-
+            navigate('/login');
         })
-        navigate('/login');
+
     }
 
     useEffect(() => {
@@ -122,17 +122,40 @@ export default function Navigation(){
                     <img src={img} alt="" className={sysAdd.icon} id="pfp"/>
                     <div className={`${sysAdd.label} ${sysAdd.account_setting}`} id="list">
                     <ul className={sysAdd.account_setting_options}>
+                        {user.role === "system" && <>
                             <li className={sysAdd.option}>
-                            <a href="#" onClick={onLogout} className="btn-logout">
-                                    <p>Logout</p>
-                                    <i class="fa-solid fa-right-from-bracket"></i>
-                            </a>
+                                <Link to="/systemAdminDashboard">
+                                    Login as System Admin
+                                    <i class="fa-solid fa-book-open-reader"></i>
+                                </Link>
                             </li>
-                            <li><div className={sysAdd.divider}></div></li>
                             <li className={sysAdd.option}>
-                                View Profile
-                                <i class="fa-solid fa-user"></i>
+                                <Link to="/courseAdminDashboard">
+                                    Login as Course Admin
+                                    <i class="fa-solid fa-book-open-reader"></i>
+                                </Link>
                             </li>
+                            </>
+                        }
+                        {user.role === "course" &&
+                            <li className={sysAdd.option}>
+                                <Link to="/courseAdminDashboard">
+                                    Login as Course Admin
+                                    <i class="fa-solid fa-book-open-reader"></i>
+                                </Link>
+                            </li>
+                        }
+                        <li className={sysAdd.option}>
+                        <a href="#" onClick={onLogout} className="btn-logout">
+                                <p>Logout</p>
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                        </a>
+                        </li>
+                        <li><div className={sysAdd.divider}></div></li>
+                        <li className={sysAdd.option}>
+                            View Profile
+                            <i class="fa-solid fa-user"></i>
+                        </li>
                     </ul>
                     </div>
                 </li>

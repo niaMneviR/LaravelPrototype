@@ -18,9 +18,8 @@ export default function Navigation(){
         axiosClient.post('/logout').then(()=>{
             setUser({})
             setToken(null)
-
+            navigate('/login');
         })
-        navigate('/login');
     }
 
     useEffect(() => {
