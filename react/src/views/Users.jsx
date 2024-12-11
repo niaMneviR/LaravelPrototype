@@ -119,7 +119,7 @@ export default function Users(){
                                         <td>{u.role}</td>
                                         <td>{u.department}</td>
                                         <td>{u.branch}</td>
-                                        <td><button>View User Profile</button></td>
+                                        <td><Link to={'/users/' + u.id} className="btn btn-Edit">View User Profile</Link></td>
                                     </tr>
                                 ))}
                             </tbody>

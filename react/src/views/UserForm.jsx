@@ -14,6 +14,9 @@ export default function UserForm(){
         id:null,
         name: '',
         email: '',
+        role: '',
+        department: '',
+        branch: '',
         password: '',
         password_confirmation: ''
     })
@@ -23,6 +26,9 @@ export default function UserForm(){
         id:null,
         name: '',
         email: '',
+        role: '',
+        department: '',
+        branch: '',
         password: '',
         password_confirmation: ''
     })
