@@ -23,7 +23,6 @@ export default function Users(){
             setUsers(data.data)
             setCurrentPage(currentPage);
             setTotalPages(data.meta.last_page)
-            console.log(data.meta.last_page)
             setLoading(false);
         }).catch(()=>{
             setLoading(false);
@@ -120,7 +119,7 @@ export default function Users(){
                                         <td>{u.role}</td>
                                         <td>{u.department}</td>
                                         <td>{u.branch}</td>
-                                        <td><button onclick="">View User Profile</button></td>
+                                        <td><button>View User Profile</button></td>
                                     </tr>
                                 ))}
                             </tbody>

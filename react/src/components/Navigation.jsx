@@ -139,12 +139,17 @@ export default function Navigation(){
                     <div className={`${sysAdd.label} ${sysAdd.account_setting}`} id="list">
                     <ul className={sysAdd.account_setting_options}>
                             <li className={sysAdd.option}>
-                            Login as Course Admin
-                                <i class="fa-solid fa-book-open-reader"></i>
+                                <Link to="/courseAdminDashboard">
+                                    Login as Course Admin
+                                    <i class="fa-solid fa-book-open-reader"></i>
+                                </Link>
                             </li>
                             <li className={sysAdd.option}>
-                                Login as Learner
-                                <i class="fa-solid fa-graduation-cap"></i>
+                                <Link to="/dashboard">
+                                    Login as Learner
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </Link>
+                                
                             </li>
                             <li className={sysAdd.option}>
                             <a href="#" onClick={onLogout} className="btn-logout">
