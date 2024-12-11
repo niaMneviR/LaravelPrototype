@@ -3,7 +3,6 @@
     padding: 15px;
     width: 100%;
     background-color: white;
-    height: 60%;
     border-radius: 10px;
     flex-direction: column;
     align-items: flex-start;
@@ -32,7 +31,8 @@
     gap: 10px;
 }
 .button button{
-    padding: 5px 20px 5px 20px;
+    padding: 5px 10px 5px 10px;
+    font-size: small;
     border-radius: 20px;
     background-color: transparent;
     color: var(--Primary-Color);
@@ -182,6 +182,7 @@
     border-radius: 10px;
     border: 1px solid var(--Primary-Color);
     gap: 10px;
+    font-size: small;
 }
 .task_card p{
     margin: 0px;
@@ -189,4 +190,16 @@
 
 .task_card i{
     font-size: x-large;
+}
+
+.task_card_complete{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+}
+
+.task_card_complete img{
+    width: 70%;
+    height: 70%;
 }

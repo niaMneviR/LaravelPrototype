@@ -8,10 +8,10 @@ import Navigation from "./Navigation";
 export default function DefaultLayout(){
     const {user, token, setUser, setToken} = useStateContext()
 
-    
+
     // TODO Implement different layout/navigation bar for each role
     // reference: https://react.dev/learn , updating the screen
-    
+
     if(!token){
         return <Navigate to='/login' />
     }
@@ -32,11 +32,6 @@ export default function DefaultLayout(){
     }, [])
 
     return(
-        <div className={sysAdd.body}>
-            <header id={sysAdd.nav}>
-                <Navigation />
-            </header>
-            learner
-        </div>
+        <Outlet />
     )
 }

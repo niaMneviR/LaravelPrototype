@@ -6,7 +6,7 @@ import pr1 from "../style/assests/prototype/1.png"
 import pr2 from "../style/assests/prototype/2.png"
 import CourseAdd from "../style/course-admin.module.css"
 
-export default function CenterCA(){
+export default function CenterL(){
 
     return(
         <section className={sysAdd.Center}>
@@ -35,7 +35,7 @@ export default function CenterCA(){
                     <section className={CourseAdd.header}>
                         <div className={CourseAdd.title}>
                             <h1>Courses</h1>
-                            <p>Manage your courses with ease—organize and oversee training programs tailored for learners</p>
+                            <p>Explore all your enrolled training programs, track your progress, and access course materials at any time.</p>
                         </div>
                         <div className={CourseAdd.button}>
                             <button>Active</button>
