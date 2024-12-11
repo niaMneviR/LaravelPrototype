@@ -11,7 +11,7 @@ class UpdateEnrollmentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,16 @@ class UpdateEnrollmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'userId' => 'required|integer',
+            'courseId'=> 'required|integer',
+            'deadline'=> 'required|date_format:Y-m-d'
         ];
+    }
+
+    public function prepareforValidation(){
+        $this->merge([
+            'user_id'=> $this->userId,
+            'course_id'=> $this->courseId,
+        ]);
     }
 }

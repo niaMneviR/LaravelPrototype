@@ -13,26 +13,34 @@ export default function Users(){
     const [loading, setLoading] = useState(false);
 
     useEffect(()=>{
-        getData(1);
-    }, [])
+        getData(currentPage);
+    }, [currentPage])
 
-    const getData = async (page = 1) =>{
+    const getData = async (page) =>{
         setLoading(true);
         axiosClient.get(`/users?page=${page}`).then(({data})=>{
             console.log(data);
             setUsers(data.data)
-            setCurrentPage(data.meta.current_page);
+            setCurrentPage(currentPage);
             setTotalPages(data.meta.last_page)
+            console.log(data.meta.last_page)
             setLoading(false);
         }).catch(()=>{
             setLoading(false);
         })
     }
 
-    const pageChange = (selected) => {
-        const newPage = selected.selected + 1;
-        setCurrentPage(selected.selected);
-        getData(newPage);
+
+    const handleNextPage = () => {
+        if(currentPage<totalPages){
+            setCurrentPage(currentPage+1)
+        }
+    }
+
+    const handlePrevPage = () => {
+        if(currentPage > 1){
+            setCurrentPage(currentPage-1)
+        }
     }
 
     const onDelete = (u) =>{
@@ -118,7 +126,8 @@ export default function Users(){
                             </tbody>
                             }
                         </table>
-                        
+                        <button onClick={handlePrevPage} disabled={currentPage === 1}>Prev</button>
+                        <button onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
                     </div>
                     <section className={`Side filters ${list.side}`}>
                         <Link to="/users/new">
