@@ -4,6 +4,13 @@ import Center from "../components/Center";
 import Side from "../components/Side";
 
 export default function SystemAdminDashboard(){
+
+    const rootDiv = document.getElementById('root');
+    if(rootDiv){
+        rootDiv.classList.add("body")
+    }
+
+
     return(
     <>
         <header id="Navigation_Container" className={sysAdd.header}>

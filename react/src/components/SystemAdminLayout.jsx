@@ -38,8 +38,6 @@ export default function SystemAdminLayout(){
     }
 
     return(
-        <div className={sysAdd.body}>
             <Outlet/>
-        </div>
     )
 }
