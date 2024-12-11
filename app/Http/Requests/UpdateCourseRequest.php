@@ -27,10 +27,16 @@ class UpdateCourseRequest extends FormRequest
             'code'=> 'required',
             'description'=> 'required',
             'type'=> 'required',
-            'training_mode'=> 'required',
+            'trainingMode'=> 'required',
             'mandatory'=> ['required', Rule::in(['mandatory', 'non-mandatory'])],
             'duration'=> 'required',
             'archived'=> ['required', Rule::in(['active', 'archived'])],
         ];
+    }
+
+    public function prepareforValidation(){
+        $this->merge([
+            'training_mode' => $this->trainingMode
+        ]);
     }
 }

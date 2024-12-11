@@ -19,19 +19,13 @@ class EnrollmentController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StoreEnrollmentRequest $request)
     {
-        //
+        $enrollment = Enrollment::create($request->all());
+        $test = new EnrollmentResource($enrollment);
+        return new EnrollmentResource($enrollment);
     }
 
     /**
@@ -39,7 +33,9 @@ class EnrollmentController extends Controller
      */
     public function update(UpdateEnrollmentRequest $request, Enrollment $enrollment)
     {
-        //
+        $temp = $enrollment->update($request->all());
+
+        return new EnrollmentResource($temp);
     }
 
     /**
