@@ -110,6 +110,7 @@
 }
 
 :global(.body){
+    height: 100%;
     background-color: var(--DashboardBackground-Color);
     display: flex;
     flex-direction: row;
@@ -172,6 +173,58 @@ li .label{
     position: fixed;
     left: 4.375rem;
     z-index: 1;
+}
+.users li img{
+    width: 1.875rem;
+    border-radius: 3.125rem;
+}
+
+.users .active{
+    display: inline-block;
+}
+
+.account_setting{
+    bottom: 2.5rem;
+}
+
+.account_setting_options{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.account_setting_options li:nth-child(4){
+    width: 105%;
+    align-self: center;
+}
+
+.account_setting_options li .divider{
+    height: 1px;
+    background-color: white;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.account_setting_options li{
+    width: 100%;
+    gap: 15px;
+    justify-content: space-between;
+    transition: 0.5 ease;
+    color: var(--Unactive-Color);
+}
+
+.account_setting_options .option:hover{
+    color: white;
+    cursor: pointer;
+}
+
+.account_setting_options .option:hover i{
+    color: white;
+}
+
+.Navigations i:hover, .users i:hover{
+    cursor: pointer;
+    color: var(--Primary-Color);
 }
 
 .logo{
@@ -256,10 +309,20 @@ li .label{
 }
 
 .Center_Content{
-    border-radius: 0.625rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Center_Content .panel{
     background-color: white;
-    padding: 0.625rem;
-    height: 55%;
+    padding: 10px;
+    border-radius: 10px;
+    width: 49%;
+}
+
+.Center_Content .panel img{
+    width: 100%;
 }
 
 .status{
@@ -275,3 +338,16 @@ li .label{
     width: 23%;
 }
 
+.status{
+    display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 30px;
+}
+.status .panel img{
+    width: 100%;
+}
+
+.status .panel{
+    width: 70%;
+}

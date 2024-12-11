@@ -1,6 +1,9 @@
 import sysAdd from "../style/system-admin.module.css"
 import calendar from "../style/calendar.module.css"
 import { useEffect, useState } from "react";
+import pr3 from "../style/assests/prototype/3.png"
+import pr4 from "../style/assests/prototype/4.png"
+import pr5 from "../style/assests/prototype/5.png"
 
 export default function Side(){
     const [date, setDate] = useState(new Date());
@@ -24,7 +27,7 @@ export default function Side(){
 
     const manipulate = () => {
         const dayOne = new Date(year, month, 1).getDay();
-        const lastDate = new Date(year, month + 1, 0).getDate(); 
+        const lastDate = new Date(year, month + 1, 0).getDate();
         const dayEnd = new Date(year, month, lastDate).getDay();
         const monthLastDate = new Date(year, month, 0).getDate();
 
@@ -34,7 +37,7 @@ export default function Side(){
         for (let i = dayOne; i > 0; i--) {
             daysList.push({ day: monthLastDate - i + 1, active: false, inactive: true });
           }
-      
+
 
         for (let i = 1; i <= lastDate; i++) {
         const isToday =
@@ -43,12 +46,12 @@ export default function Side(){
             year === new Date().getFullYear();
         daysList.push({ day: i, active: isToday, inactive: false });
         }
-      
+
 
         for (let i = dayEnd; i < 6; i++) {
         daysList.push({ day: i - dayEnd + 1, active: false, inactive: true });
         }
-    
+
         setDays(daysList);
     };
 
@@ -103,9 +106,21 @@ export default function Side(){
                     </ul>
                 </div>
             </div>
-            <div className={sysAdd.status}></div>
-            <div className={sysAdd.status}></div>
-            <div className={sysAdd.status}></div>
+            <div className={sysAdd.status}>
+                <div className={sysAdd.panel}>
+                        <img src={pr3} alt="" />
+                </div>
+            </div>
+            <div className={sysAdd.status}>
+                <div className={sysAdd.panel}>
+                        <img src={pr4} alt="" />
+                </div>
+            </div>
+            <div className={sysAdd.status}>
+                <div className={sysAdd.panel}>
+                        <img src={pr5} alt="" />
+                </div>
+            </div>
         </section>
     )
 }
