@@ -91,19 +91,23 @@ export default function Navigation(){
                 <li id={sysAdd.logo}> <img src={smallLogo} alt="" className={`${sysAdd.logo}`}/></li>
 
                 <li id={sysAdd.home} className={sysAdd.li}>
-
+                    <Link to="/courseAdminDashboard">
                         <i className="fa-solid fa-house icon" id={sysAdd.icon} data-target="label1"></i>
                         <span className={sysAdd.label}  id="label1">Home</span>
+                    </Link>
                 </li>
                 <li className={sysAdd.li}>
-
+                    <Link to="/courseAdminCourses">
                         <i className="fa-solid fa-book-bookmark icon"  id={sysAdd.icon} data-target="label2"></i>
                         <span className={sysAdd.label}  id="label2">Assigned Course</span>
+                    </Link>
                 </li>
                 <li className={sysAdd.li}>
-
+                    <Link to="/enrollment">
                         <i className="fa-solid fa-person-circle-plus icon" id={sysAdd.icon} data-target="label3"></i>
                         <span className={sysAdd.label}  id="label3">Enroll Learner</span>
+                    </Link>
+
                 </li>
                 <li className={sysAdd.li}>
                     <i className="fa-solid fa-chart-pie icon"  id={sysAdd.icon} data-target="label4"></i>
@@ -117,7 +121,7 @@ export default function Navigation(){
                     <span className={sysAdd.label}  id="label8">Account Settings</span>
                 </li>
                 <li className={sysAdd.li}>
-                    <i class="fa-solid fa-bell icon" id="icon" data-target="label9" ></i>
+                    <i className="fa-solid fa-bell icon" id="icon" data-target="label9" ></i>
                     <span className={sysAdd.label}  id="label9">Notification</span>
                 </li>
                 <li className={sysAdd.li}>
@@ -128,26 +132,26 @@ export default function Navigation(){
                             <li className={sysAdd.option}>
                                 <Link to="/systemAdminDashboard">
                                     Login as System Admin
-                                    <i class="fa-solid fa-book-open-reader"></i>
+                                    <i className="fa-solid fa-book-open-reader"></i>
                                 </Link>
                             </li>
                         }
                             <li className={sysAdd.option}>
                                 <Link to="/dashboard">
                                     Login as Learner
-                                    <i class="fa-solid fa-graduation-cap"></i>
+                                    <i className="fa-solid fa-graduation-cap"></i>
                                 </Link>
                             </li>
                             <li className={sysAdd.option}>
                             <a href="#" onClick={onLogout} className="btn-logout">
                                     <p>Logout</p>
-                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    <i className="fa-solid fa-right-from-bracket"></i>
                             </a>
                             </li>
                             <li><div className={sysAdd.divider}></div></li>
                             <li className={sysAdd.option}>
                                 View Profile
-                                <i class="fa-solid fa-user"></i>
+                                <i className="fa-solid fa-user"></i>
                             </li>
                     </ul>
                     </div>

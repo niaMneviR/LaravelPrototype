@@ -42,13 +42,13 @@ export default function Users(){
         }
     }
 
-    const onDelete = (u) =>{
+    const onDelete = u =>{
         if(!window.confirm("Are you sure you want to delete this user?")){
             return
         }
         axiosClient.delete(`/users/${u.id}`).then(()=>{
             //TODO show notification
-            getData()
+            getData(currentPage)
         })
     }
 
@@ -119,7 +119,8 @@ export default function Users(){
                                         <td>{u.role}</td>
                                         <td>{u.department}</td>
                                         <td>{u.branch}</td>
-                                        <td><Link to={'/users/' + u.id} className="btn btn-Edit">View User Profile</Link></td>
+                                        <td><button><Link to={'/users/' + u.id} className="btn btn-edit">Edit User</Link></button></td>
+                                        <td><button onClick={ev => onDelete(u)} className="btn btn-delete">Delete User</button></td>
                                     </tr>
                                 ))}
                             </tbody>

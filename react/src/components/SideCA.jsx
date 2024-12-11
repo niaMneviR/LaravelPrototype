@@ -108,7 +108,7 @@ export default function Side(){
             <div className={courseAdd.task_todo}>
                 <section className={courseAdd.title}>
                         <div className={courseAdd.header2}>
-                            <i class="fa-solid fa-clipboard-list"></i>
+                            <i className="fa-solid fa-clipboard-list"></i>
                             <h1>Task To-do</h1>
                         </div>
                         <div className={courseAdd.text}>
@@ -117,15 +117,15 @@ export default function Side(){
                 </section>
                 <section className={courseAdd.task_list}>
                         <div className={courseAdd.task_card}>
-                            <i class="fa-solid fa-graduation-cap"></i>
+                            <i className="fa-solid fa-graduation-cap"></i>
                             <p>Self Enrollment Request (30)</p>
                         </div>
                         <div className={courseAdd.task_card}>
-                            <i class="fa-solid fa-comments"></i>
+                            <i className="fa-solid fa-comments"></i>
                             <p>Feedback Reviews (12)</p>
                         </div>
                         <div className={courseAdd.task_card}>
-                            <i class="fa-solid fa-chalkboard-user"></i>
+                            <i className="fa-solid fa-chalkboard-user"></i>
                             <p>Request for Extend Course Deadline (12)</p>
                         </div>
 
