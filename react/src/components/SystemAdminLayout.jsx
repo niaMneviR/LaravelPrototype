@@ -8,6 +8,12 @@ import Center from "./Center";
 import Side from "./Side";
 
 export default function SystemAdminLayout(){
+    useEffect(()=>{
+        document.title = "MBLearn - System Admin"
+    },[])
+
+
+
     const {user, token, setUser, setToken} = useStateContext()
     // TODO Implement different layout/navigation bar for each role
     // reference: https://react.dev/learn , updating the screen
