@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\V1\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BulkStoreEnrollmentRequest;
 use App\Http\Requests\StoreEnrollmentRequest;
 use App\Http\Requests\UpdateEnrollmentRequest;
 use App\Http\Resources\V1\Api\EnrollmentResource;
@@ -26,6 +27,10 @@ class EnrollmentController extends Controller
         $enrollment = Enrollment::create($request->all());
         $test = new EnrollmentResource($enrollment);
         return new EnrollmentResource($enrollment);
+    }
+
+    public function bulkStore(BulkStoreEnrollmentRequest $request){
+
     }
 
     /**

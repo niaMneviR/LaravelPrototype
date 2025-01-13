@@ -30,7 +30,7 @@ class UpdateUserRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'email' => 'required|email|unique:users,email,'.$this->id,
+            'email' => ['required','email', Rule::unique('users')->ignore($this->user->id)],    
             'branch'=> 'required',
             'department' => 'required',
             'role' => Rule::in(['learner', 'system', 'course']),

@@ -15,6 +15,7 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::apiResource('/users', UserController::class);
     Route::apiResource('/courses', CourseController::class);
     Route::apiResource('/enrollments', EnrollmentController::class);
+    Route::post('/enrollments/bulk', ['uses' => 'EnrollmentController@bulkStore']);
 });
 
 Route::post('/login', [AuthController::class, 'login']);
