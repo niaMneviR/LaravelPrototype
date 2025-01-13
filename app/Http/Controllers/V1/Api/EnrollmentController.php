@@ -43,6 +43,6 @@ class EnrollmentController extends Controller
      */
     public function destroy(Enrollment $enrollment)
     {
-        //
+        $enrollment->delete();
     }
 }
