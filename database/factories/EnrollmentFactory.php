@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Course;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,7 +20,7 @@ class EnrollmentFactory extends Factory
     {
         return [
             'user_id'=> User::factory(),
-            'course_id'=> fake()->randomElement([1, 2]),
+            'course_id'=> Course::factory(),
             'deadline' => fake()->dateTimeBetween($startDate = '+7 days', $endDate = '+14 days'),
         ];
     }
