@@ -11,7 +11,7 @@ class BulkStoreEnrollmentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,16 +22,21 @@ class BulkStoreEnrollmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'userId' => 'required|integer|exists:users,id',
-            'courseId'=> 'required|integer|exists:courses,id',
-            'deadline'=> 'required|date_format:Y-m-d'
+            'data.*.userId' => 'required|integer|exists:users,id',
+            'data.*.courseId'=> 'required|integer|exists:courses,id',
+            'data.*.deadline'=> 'required|date_format:Y-m-d'
         ];
     }
 
     public function prepareforValidation(){
-        $this->merge([
-            'user_id'=> $this->userId,
-            'course_id'=> $this->courseId,
-        ]);
+        $data = [];
+        foreach($this->toArray() as $obj){
+            $obj['user_id'] = $obj['userId'] ?? null;
+            $obj['course_id'] = $obj['courseId'] ?? null;
+
+            $data[] = $obj;
+        }
+
+        $this->merge($data);
     }
 }

@@ -8,6 +8,7 @@ use App\Http\Requests\StoreEnrollmentRequest;
 use App\Http\Requests\UpdateEnrollmentRequest;
 use App\Http\Resources\V1\Api\EnrollmentResource;
 use App\Models\Enrollment;
+use Illuminate\Support\Arr;
 
 class EnrollmentController extends Controller
 {
@@ -30,8 +31,16 @@ class EnrollmentController extends Controller
     }
 
     public function bulkStore(BulkStoreEnrollmentRequest $request){
+        $bulk = collect($request->all())->map(function($arr, $key){
+            return Arr::except($arr, ['userId', 'courseId']);
+        });
 
-    }
+        Enrollment::insert($bulk->toArray());
+
+        return response()->json([
+            "congrats" => "nagawa mo na"
+        ]);
+    } 
 
     /**
      * Update the specified resource in storage.
