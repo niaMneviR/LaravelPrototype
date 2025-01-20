@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\V1\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BulkStoreUserRequest;
 use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Resources\V1\Api\UserResource;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
@@ -35,6 +37,18 @@ class UserController extends Controller
         $data['password'] = bcrypt($data['password']);
         $user = User::create($data);
         return response(new UserResource($user), 201);
+    }
+
+    public function bulkStore(BulkStoreUserRequest $request){
+        $bulk = collect($request->all())->map(function($arr, $key){
+            return Arr::except($arr, ['userId', 'courseId']);
+        });
+
+        User::insert($bulk->toArray());
+
+        return response()->json([
+            "congrats" => "nagawa mo na"
+        ]);
     }
 
     /**
